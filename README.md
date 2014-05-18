@@ -14,30 +14,50 @@ Response implementation for SOA Discovery implementations
 
 A Discover implementation should alwas respond with an instance of this class
 
-### Cosntructor
+### Constructor
 
 	var DiscoveryResponse = require('ee-soa-discovery-response');
 
 	var myresponse = new DiscoveryResponse({
-		transport: DiscoveryResponse.localTransport
+		  status 	: DiscoveryResponse.statuses.Found
+		, transport : DiscoveryResponse.transports.Local
 	});
 
 
 Currently supported transports:
 
-- localTransport: request does not leave the current process
+- Local: request does not leave the current process
+- REST: sends requests via rest transport
+- RabbitMQ: sends resuqests via a rabbitMQ queue
 
 
-### listTransports method
 
-returns an object containing all vailabel transport ids
+### transports property
 
-	var transports = DiscoveryResponse.listTransports();
+object containing all available transports
+
+	var transports = DiscoveryResponse.transports;
 
 	// alternative method
 	var myresponse = new DiscoveryResponse({
-		transport: DiscoveryResponse.localTransport
+		  status 	: DiscoveryResponse.statuses.Found
+		, transport : DiscoveryResponse.transports.Local
 	});
 
-	var transports = myresponse.listTransports();
-	
+	var transports = myresponse.transports;
+
+
+
+### status property
+
+object containing all available statuses
+
+	var statuses = DiscoveryResponse.statuses;
+
+	// alternative method
+	var myresponse = new DiscoveryResponse({
+		  status 	: DiscoveryResponse.statuses.Found
+		, transport : DiscoveryResponse.transports.Local
+	});
+
+	var statuses = myresponse.statuses;
