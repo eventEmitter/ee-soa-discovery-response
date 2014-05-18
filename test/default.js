@@ -33,5 +33,16 @@
 				});
 			});
 		});	
+
+		it('should be able to list all available transports', function(){
+			assert.equal(JSON.stringify(new Response({
+				transport: Response.localTransport
+			}).listTransports()), '{"localTransport":"local"}');
+		});
+
+
+		it('should be able to list all available transports #2', function(){
+			assert.equal(JSON.stringify(Response.listTransports()), '{"localTransport":"local"}');
+		});
 	});
 	

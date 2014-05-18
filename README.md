@@ -14,6 +14,8 @@ Response implementation for SOA Discovery implementations
 
 A Discover implementation should alwas respond with an instance of this class
 
+### Cosntructor
+
 	var DiscoveryResponse = require('ee-soa-discovery-response');
 
 	var myresponse = new DiscoveryResponse({
@@ -24,3 +26,18 @@ A Discover implementation should alwas respond with an instance of this class
 Currently supported transports:
 
 - localTransport: request does not leave the current process
+
+
+### listTransports method
+
+returns an object containing all vailabel transport ids
+
+	var transports = DiscoveryResponse.listTransports();
+
+	// alternative method
+	var myresponse = new DiscoveryResponse({
+		transport: DiscoveryResponse.localTransport
+	});
+
+	var transports = myresponse.listTransports();
+	
