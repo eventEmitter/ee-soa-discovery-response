@@ -1,5 +1,7 @@
 # ee-soa-discovery-response
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/ee-soa-discovery-response.svg)](https://greenkeeper.io/)
+
 Response implementation for SOA Discovery implementations
 
 ## installation
